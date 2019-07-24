@@ -55,17 +55,18 @@
 //     font-size: 25px;
 // }
 #name {
-    font-size: 20px;
+    font-size: 18px;
     margin: 0;
-    padding: 27px 0px 10px 0px;
+    padding: 27px 5px 10px 0px;
     line-height: 0px;
     font-weight: bold;
+    text-align:right;
 }
 #email {
     color: var(--isha-orange);
     font-size: 12px;
     font-style: italic;
-    padding: 5px 0px 0px 0px;
+    padding: 5px 5px 0px 0px;
     line-height: 0px;
 }
 @media screen and (max-width: 780px) {
