@@ -4,6 +4,8 @@ import { Observable } from "rxjs";
 import { Router, NavigationEnd } from "@angular/router";
 import { ConstantState } from "./state/constants/constants.state";
 import { FetchConstants } from "./state/constants/constants.actions";
+import { KeycloakState } from "./sdk/features/keycloak/keycloak.state";
+import { Login } from "./sdk/features/keycloak/keycloak.actions";
 
 @Component({
   selector: "app-root",
@@ -22,6 +24,9 @@ export class AppComponent implements OnInit {
   currentPath: string;
   showSidebar: boolean = true;
   appLoadingText: string;
+  authenticate = () => {
+    this.store.dispatch(new Login());
+  };
   fetchConstants = () => {
     this.store.dispatch(new FetchConstants());
   };
@@ -62,6 +67,7 @@ export class AppComponent implements OnInit {
     });
   }
   ngOnInit() {
-    this.fetchConstants();
+    this.authenticate();
+
   }
 }
